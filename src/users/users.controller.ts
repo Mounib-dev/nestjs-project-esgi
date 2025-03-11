@@ -17,7 +17,7 @@ export class UsersController {
     return this.usersService.findOne(id);
   }
 
-  @Post("register")
+  @Post("/auth/register")
   @HttpCode(201)
   async register(@Body() registerUserDto: RegisterUserDto): Promise<void> {
     await this.usersService.register(registerUserDto);
