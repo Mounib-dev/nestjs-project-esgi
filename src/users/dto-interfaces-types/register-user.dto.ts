@@ -15,5 +15,5 @@ export class RegisterUserDto {
   @IsNotEmpty()
   lastname: string;
 
-  role: UserRole;
+  role?: UserRole;
 }

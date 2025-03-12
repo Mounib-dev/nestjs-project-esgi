@@ -23,7 +23,7 @@ export class User {
   @Column()
   lastname: string;
 
-  @Column({ type: "enum", enum: UserRole })
+  @Column({ type: "enum", enum: UserRole, default: UserRole.ENTREPRENEUR })
   role: UserRole;
 
   @CreateDateColumn({ type: "timestamp" })
