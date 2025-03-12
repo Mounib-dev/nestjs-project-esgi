@@ -29,7 +29,7 @@ export class UsersService {
       password: hashedPassword,
       firstname,
       lastname,
-      role: role,
+      role,
     });
 
     await this.usersRepository.save(user);
