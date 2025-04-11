@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Exclude } from "class-transformer";
+import { User } from "src/users/user.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Project {
@@ -17,6 +19,7 @@ export class Project {
   @Column()
   category: string;
 
-  @Column()
-  ownerId: number;
+  @ManyToOne((_type) => User, (user) => user.projects, { eager: false })
+  @Exclude({ toPlainOnly: true })
+  user: User;
 }
