@@ -3,5 +3,4 @@ export class CreateProjectDto {
   description: string;
   budget: number;
   category: string;
-  ownerId: number;
 }
